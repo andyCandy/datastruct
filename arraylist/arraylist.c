@@ -28,8 +28,9 @@ void TestGetElem(){
 
 	};
 	ElemType *e;
-	Status status = GetElem(sqlist,3,e);
-	if(status == OK && *e==3)
+	Status status  = GetElem(sqlist,3,e);
+	Status status2 = GetElem(sqlist,5,e);
+	if(status == OK && status2 == ERROR  && *e==3)
 	{
 		printf("GetElem SUCCESS\n");
 	}
