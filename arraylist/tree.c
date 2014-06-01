@@ -27,6 +27,17 @@ void InOrderTraverse(BitTree t){
 
 }
 
+void PostOrderTraverse(BitTree t){
+	if(!t)
+		return;
+
+	PostOrderTraverse(t->lchild);
+	PostOrderTraverse(t->rchild);
+	printf("%c",t->data);
+
+
+}
+
 void TestOrderTraverse(){
 	BitNode lchild ={
 		'l',
@@ -44,10 +55,15 @@ void TestOrderTraverse(){
 		&lchild,&rchild
 
 	};
+	BitTree root2 = &root;
+	BitTree root3 = &root;
 	PreOrderTraverse(&root);
-	printf("换行\n");
-	InOrderTraverse(&root);
-	
+	printf("\n");
+	InOrderTraverse(root2);
+	printf("\n");
+	PostOrderTraverse(root3);
+	printf("\n");
+
 }
 
 
